@@ -184,7 +184,7 @@ header('Content-Type: text/html; charset=utf-8');
         ?>
         <h1 class="title m-b-md">Религиоведение: лекции по религиоведению</h1>
         <div class="links">
-          <a href="/youtube" target="_blank"><i class="fa fa-youtube-square fa-5x" style="color: #ef0000;"></i> канал</a> | <a href="/vk" target="_blank">Сообщество <i class="fa fa-vk fa-4x"></i></a> | <a href="/about_content">Дополнительно о контенте</a> | <a href="/donate">Помочь проекту</a>
+          <a href="/youtube" target="_blank"><i class="fa fa-youtube-square fa-5x" style="color: #ef0000;"></i> канал</a> | <a href="/vk" target="_blank">Сообщество <i class="fa fa-vk fa-4x"></i></a> | <a href="/about_content">Дополнительно о контенте</a> | <a href="/letters">Обратная связь</a> | <a href="/donate">Помочь проекту</a>
         </div>
         <?php
         break;
@@ -204,6 +204,11 @@ header('Content-Type: text/html; charset=utf-8');
           <li>Оказать финансовую поддержку:</li>
         </ul>
         <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/shop-widget?account=410014838319585&amp;quickpay=shop&amp;payment-type-choice=on&amp;mobile-payment-type-choice=on&amp;writer=buyer&amp;default-sum=100&amp;button-text=01&amp;fio=on&amp;mail=on&amp;successURL=http%3A%2F%2Fstudyofreligion.ru%2F" width="450" height="210"></iframe>
+        <?php
+        break;
+        case 'letters':?>
+        <h1 class="title m-b-md">Обратная связь</h1>
+        <p><img src="/images/c.png" alt="picture"/></p>
         <?php
         break;
         case 'source': exit(header('Location: https://github.com/studyofreligion/StudyOfReligion')); break;
