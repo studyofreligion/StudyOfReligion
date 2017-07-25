@@ -1,0 +1,76 @@
+# MIME-Types and extensions for this site
+AddType text/css .css .CSS
+AddType image/gif .gif .GIF
+AddType image/jpeg .jpg .JPG .jpe .JPE .jpeg .JPEG .jif .JIF .jfi .JFI .jfif .JFIF
+AddType text/plain .asc .txt .ASC .TXT
+AddType image/x-icon .ico .ICO
+AddType application/x-font-eot .eot .EOT
+AddType application/x-font-ghostscript .gsf .GSF
+AddType application/x-font-linux-psf .psf .PSF
+AddType application/x-font-otf .otf .OTF
+AddType application/x-font-pcf .pcf .PCF
+AddType application/x-font-snf .snf .SNF
+AddType application/x-font-ttf .ttf .TTF .ttc .TTC
+AddType application/x-font-type1 .pfa .PFA .pfb .PFB .pfm .PFM .afm .AFM
+AddType application/x-font-woff .woff .WOFF
+
+# PHP Options
+php_flag last_modified 1
+php_value file_uploads Off
+
+# Directory (default by DocumentRoot) settings
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset utf-8
+
+# Error redirects
+ErrorDocument 403 /
+ErrorDocument 404 /
+
+# Rewrite settings
+RewriteEngine On
+RewriteRule ^([a-z_-]*)$ /index.php?pg=$1 [QSA,L]
+RewriteCond %{REQUEST_METHOD} ^TRACE
+RewriteRule .* - [F]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule .* - [F,L]
+RewriteCond %{HTTP_HOST} ^www\.studyofreligion\.ru$ [NC]
+RewriteCond %{REQUEST_URI} !^/robots.*
+RewriteRule ^(.*)$ https://studyofreligion.ru/$1 [R=301,L]
+
+FileETag MTime Size
+
+# Caching
+<filesmatch ".(css|js|ico|jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG|otf)$">
+ExpiresActive on
+ExpiresDefault "access plus 6 months"
+</filesmatch>
+<IfModule mod_expires.c>
+ExpiresDefault "access 7 days"
+ExpiresByType text/javascript "access plus 6 months"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType text/html "access plus 7 day"
+ExpiresByType image/gif "access plus 6 months"
+ExpiresByType image/jpeg "access plus 6 months"
+ExpiresByType image/png "access plus 6 months"
+ExpiresByType image/x-icon "access 6 months"
+ExpiresByType application/x-font-otf "access 6 months"
+</IfModule>
+
+# 30 days
+<filesMatch "\.(ico|pdf|PDF|flv|jpg|jpeg|JPG|JPEG|png|PNG||gif|GIF|swf|mp4)$">
+Header set Cache-Control: "public, must-revalidate"
+</filesMatch>
+# 30 days
+<filesMatch "\.(css|js)$">
+Header set X-Content-Type-Options: nosniff
+Header set Cache-Control: "public, max-age=2592000"
+</filesMatch>
+# 2 days
+<filesMatch "\.(xml|txt)$">
+Header set Cache-Control: "public, must-revalidate"
+</filesMatch>
+
+Header set X-XSS-Protection: "1;mode=block"
+Header set X-Frame-Options: sameorigin
+ServerSignature Off
