@@ -1,0 +1,7 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://studyofreligion.ru/sitemap.xml
+
+Host: studyofreligion.ru
