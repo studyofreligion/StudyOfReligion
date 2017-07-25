@@ -8,7 +8,7 @@
 * @package StudyOfReligion
 * @author Dmitry Fomin
 * @license The MIT License (MIT)
-* @url https://studyofreligion.ru/ 
+* @link https://studyofreligion.ru/ 
 */
 
 /**
@@ -206,7 +206,7 @@ header('Content-Type: text/html; charset=utf-8');
         <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/quickpay/shop-widget?account=410014838319585&amp;quickpay=shop&amp;payment-type-choice=on&amp;mobile-payment-type-choice=on&amp;writer=buyer&amp;default-sum=100&amp;button-text=01&amp;fio=on&amp;mail=on&amp;successURL=http%3A%2F%2Fstudyofreligion.ru%2F" width="450" height="210"></iframe>
         <?php
         break;
-        case 'source': exit(header('Location: https://github.com/')); break;
+        case 'source': exit(header('Location: https://github.com/studyofreligion/StudyOfReligion')); break;
         case 'vk': exit(header('Location: https://vk.com/study_of_religion')); break;
         case 'youtube': exit(header('Location: https://www.youtube.com/channel/UCEqae2DjiQCj03P5C7V4bgQ')); break;
       endswitch;?>
