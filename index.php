@@ -191,9 +191,9 @@ header('Content-Type: text/html; charset=utf-8');
         case 'about_content':?>
         <h1 class="title m-b-md">О контенте</h1>
         <p>Весь мультимедийный контент проекта studyofreligion.ru распространяется под свободной лицензией <span style="font-weight: bold;">CC-BY</span>, что даёт возможность повторного использования - редактировать/использовать/встраивать контент с обязательным указанием авторства</p>
-        <h2>Исходный код проекта (будет опубликован в ближайшие дни на GitHub)</h2>
+        <h2>Исходный код проекта</h2>
         <p>Сайт studyofreligion.ru - проект с открытым исходным кодом под свободной лицензией Массачусетского технологического института <span style="font-weight: bold;">The MIT License</span>.</p>
-        <p><i class="fa fa-github fa-5x"></i><a href="/source" target="_blank">Исходный код сайта</a></p>
+        <p><i class="fa fa-github fa-5x"></i><a href="/source" target="_blank">Исходный код сайта на GitHub</a></p>
         <?php
         break;
         case 'donate':?>
